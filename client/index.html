@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
+
+  <script type='text/javascript'>
+	  var app = angular.module('app', ['ngRoute']);
+    //routing
+    app.config(function ($routeProvider, $locationProvider) {
+      $routeProvider
+        .when('/',{
+            templateUrl: 'partials/voluntary.html'
+        })
+        .when('/search',{
+            templateUrl: 'partials/search.html'
+        })
+        .otherwise({
+          redirectTo: '/'
+        });
+    });
+
+  </script>
+
+  <script type="text/javascript" src="./controllers/main.js"></script>
+
+
+  <title>Evidation</title>
+</head>
+<body ng-controller="mainController">
+  <div class="container-fluid">
+    <div class="row text-center">
+      <h1 id='header'><span id="circle">O</span> MEDCOMPANY</h1>
+      <small>Medcompany Efficacy Study</small>
+    </div>
+
+    <div class="row">
+      <div class="center-div">
+        <div id="view" ng-view="" />
+      </div>
+    </div>
+  </div>
+</body>
+
+
+<script type="text/javascript">
+  Array.prototype.inArray = function(comparer) {
+    for(var i=0; i < this.length; i++) {
+        if(comparer(this[i])) return true;
+    }
+    return false;
+  };
+
+  Array.prototype.pushIfNotExist = function(element, comparer) {
+    if (!this.inArray(comparer)) {
+        this.push(element);
+    }
+  };
+</script>
+</html>

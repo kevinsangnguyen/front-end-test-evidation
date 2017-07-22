@@ -1,0 +1,17 @@
+  <h1 id="page-title">Search for a physician or organization</h1>
+  <div class="row">
+    <div class="col-xs-12">
+      <input class="form-control" id="search" type="text" placeholder="Search for a doctor, physician, or organization by name" ng-model="s.input">
+    </div>
+  </div>
+
+  <div class="results" ng-if="loading" style="text-align:center">
+    <h1>Loading Providers</h1>
+  </div>
+
+  <div class="results" ng-if="!loading" ng-repeat="result in results">
+    <div style="padding-left: 15px" ng-click=info(result)>
+      <strong ng-if="result.first_name">{{result.first_name}} {{result.last_name}}</strong>
+      <strong ng-if="result.organization_name">{{result.organization_name}}</strong>
+    </div>
+  </div>

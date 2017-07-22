@@ -1,0 +1,55 @@
+body{
+  margin: 0;
+  padding: 0;
+  background-color: #f9f6d6;
+}
+
+#header{
+  font-weight: bold;
+  font-size: 18px;
+  margin: 25px 0 5px 0;
+}
+
+#circle{
+  color: #22A4AB;
+}
+
+#view {
+  padding: 20px;
+  background-color: #FFFFFF;
+  margin-top: 50px;
+}
+
+.center-div {
+  width:50%;
+  float: none;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 540px) {
+    .center-div {
+        width: 70%;
+    }
+}
+
+@media screen and (min-width: 540px) and (max-width: 780px) {
+    .center-div {
+        width: 60%;
+    }
+}
+
+#page-title {
+  font-size: 18px;
+  font-weight: bold;
+  padding : 15px 0 20px 0;
+  text-align: center;
+}
+
+.teal {
+  color: #13464D;
+}
+
+.results{
+  padding: 25px 5px;
+  border: 1px solid #ccc;
+}
